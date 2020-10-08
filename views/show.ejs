@@ -1,0 +1,25 @@
+<%- include('./partials/portfolio') %>
+
+<section class="hero column is-7-tablet blog">
+    <div class="hero-body">
+        <div class="container">
+            <div class="is-centered">
+                <figure class="image is-5by3">
+                    <img src="<%=blog.image%>">
+                </figure>
+            </div>
+            <h1 class="title has-text-weight-semibold is-size-1 mt-4">
+                <%=blog.title%>
+            </h1>
+            <h2 class="subtitle ml-4">
+                <span class="is-size-7 has-text-grey-light">Created:</span>
+                <span class="is-size-6"><%=blog.created.toDateString()%></span>
+            </h2>
+            <div class="content">
+                <%-blog.body%>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('./partials/footer') %>
