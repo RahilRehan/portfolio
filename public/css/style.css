@@ -1,0 +1,66 @@
+#profile-pic{
+   height:236px;
+   width:236px;
+}
+
+.icons, .menu, .copyright{
+    text-align:center;
+}
+
+.twitter{
+    color:#fc5bb6;
+}
+
+.github{
+    color:#fce850;
+}
+
+.linkedin{
+    color:#b793e6;
+}
+
+.instagram{
+    color:#53c7f0
+}
+
+.medium{
+    color:#96cd39
+}
+
+.menu a{
+    display: inline-block;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+body{
+    position: relative;
+}
+
+.portfolio{
+    position: fixed;
+}
+
+.blog{
+    position: absolute;
+    right:0;
+}
+
+.blog-images{
+    height:300px;
+}
+
+/* preventing scrollbar in card */
+.card-content .media .media-content{
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+    .portfolio{
+        position: static;
+    }
+    
+    .blog{
+        position: static;
+    }
+}

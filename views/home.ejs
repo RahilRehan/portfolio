@@ -1,0 +1,59 @@
+<!-- Portfolio -->
+<%- include('./partials/portfolio') %>
+
+<!-- Blog -->
+<section class="column is-7-tablet blog">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <a class="navbar-item" href="https://bulma.io">
+            <img src="./imgs/blog.png">&nbsp <h3 class="is-size-4 is-inline-block has-text-weight-medium">
+                MY BLOG
+            </h3>
+        </a>
+
+
+        <div class="navbar-end">
+            <div class="field has-addons navbar-item">
+                <div class="control">
+                    <input class="input is-small" type="text" placeholder="Find a Blog">
+                </div>
+                <div class="control">
+                    <a class="button is-info is-small   ">
+                        Search
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Blog card -->
+
+    <div class="columns mt-5 is-multiline">
+        <%blogs.forEach((blog)=>{%>
+
+        <div class="card column mt-4 is-6-tablet is-4-desktop">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="<%=blog.image%>" alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4"><%=blog.title%></p>
+                        <p class="subtitle is-6">@rahil_rehan</p>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <a href="/blog/<%=blog._id%>">Read More &nbsp → </a>
+                </div>
+            </div>
+        </div>
+
+        <%})%>
+    </div>
+
+</section>
+
+<%- include('./partials/footer') %>
