@@ -55,6 +55,10 @@ body{
     overflow: hidden;
 }
 
+progress{
+    width:65% !important;
+}
+
 @media only screen and (max-width: 768px) {
     .portfolio{
         position: static;
