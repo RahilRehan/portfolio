@@ -3,17 +3,19 @@ const bodyParser = require("body-parser"),
     methodOverride = require("method-override"),
     expressSanitizer = require("express-sanitizer"),
     express = require("express"),
-    app = express();
+    app = express(),
+    morgan = require("morgan");
 
 
 const  blogRouter = require("./routes/blog"),
     Blog = require("./models/blog");
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 mongoose.connect("mongodb://localhost/portfolio", { useNewUrlParser: true, useUnifiedTopology: true });
 app.set("view engine", "ejs");
 
+app.use(morgan("tiny"));
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
@@ -35,6 +37,14 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res)=>{
     res.render("about");
 })
+
+app.get("/projects", (req, res)=>{
+    res.render("projects")
+})
+
+app.get('/resume', function (req, res) {
+    res.sendFile(__dirname + "/public/docs/resume.pdf");
+});
 
 app.listen(PORT, () => {
     console.log(`Server up and running at port: ${PORT}`)

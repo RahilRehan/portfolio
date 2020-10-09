@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    font-size:1.1rem;
+}
+
 #profile-pic{
    height:236px;
    width:236px;
