@@ -13,6 +13,7 @@ const  blogRouter = require("./routes/blog"),
 
 const PORT = process.env.PORT || 3000;
 
+Blog.deleteMany({title:"test123"})
 
 mongoose.connect(`mongodb+srv://rahilmuti:${process.env.MONGO_PASSWORD}@cluster0.fptgk.gcp.mongodb.net/portfolio?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true });
 app.set("view engine", "ejs");
