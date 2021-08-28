@@ -24,8 +24,6 @@ app.use(expressSanitizer()); //goes after bodyParser
 
 app.use("/blog", blogRouter);
 
-Blog.deleteMany({title:"test123"})
-
 // Routes
 app.get("/", (req, res) => {
     Blog.find({}, (err, blogs) => {
