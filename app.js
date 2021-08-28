@@ -13,8 +13,6 @@ const  blogRouter = require("./routes/blog"),
 
 const PORT = process.env.PORT || 3000;
 
-Blog.deleteMany({title:"test123"})
-
 mongoose.connect(`mongodb+srv://rahilmuti:${process.env.MONGO_PASSWORD}@cluster0.fptgk.gcp.mongodb.net/portfolio?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true });
 app.set("view engine", "ejs");
 
@@ -25,6 +23,8 @@ app.use(methodOverride("_method"));
 app.use(expressSanitizer()); //goes after bodyParser
 
 app.use("/blog", blogRouter);
+
+Blog.deleteMany({title:"test123"})
 
 // Routes
 app.get("/", (req, res) => {
