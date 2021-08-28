@@ -14,9 +14,6 @@ const  blogRouter = require("./routes/blog"),
 const PORT = process.env.PORT || 3000;
 
 
-Blog.create({title:"test123", image:"https://cloud.mongodb.com/static/images/data-explorer-empty.svg", body:"jiberish"});
-
-
 mongoose.connect(`mongodb+srv://rahilmuti:${process.env.MONGO_PASSWORD}@cluster0.fptgk.gcp.mongodb.net/portfolio?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true });
 app.set("view engine", "ejs");
 
